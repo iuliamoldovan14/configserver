@@ -1,0 +1,6 @@
+encrypt:
+  key-store:
+    secret: my-s3cr3t
+    location: file:config-server-no-warning.jks
+    alias: config-server-key-no-warning
+    password: my-s3cr3t

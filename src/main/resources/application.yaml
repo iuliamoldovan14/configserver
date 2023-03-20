@@ -1,0 +1,37 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/iuliamoldovan14/ch-config.git
+          clone-on-start: true
+          username: 'iuliamoldovan14'
+          password: ''
+  security:
+    user:
+      name: root
+      password: s3cr3t
+
+---
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          search-paths: local,staging
+  config:
+    activate:
+      on-profile: local
+
+---
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          search-paths: production
+  config:
+    activate:
+      on-profile: production
